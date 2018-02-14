@@ -1,34 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.cheshta.gymapp.ProfileActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="200dp"
         android:layout_gravity="center"
-        android:layout_height="200dp"
+        android:layout_height="190dp"
         android:src="@mipmap/user_male"
         android:id="@+id/profilePic"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/box_shape"
+        android:layout_margin="10dp">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="NAME"
+
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:layout_marginRight="40dp"
+        android:textSize="20sp"
+        android:layout_marginLeft="40dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:layout_below="@id/profilePic">
 
-    <ImageView
-        android:id="@+id/calenderIcon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@android:drawable/ic_menu_my_calendar" />
     <EditText
         android:id="@+id/dob"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="DATE OF BIRTH"
+        android:clickable="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:focusable="false"
         android:paddingBottom="15dp"
         android:paddingLeft="15dp"
         android:textSize="20sp" />
@@ -37,56 +57,62 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
+        <EditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="10dp"
             android:text="LIFESTYLE"
+            android:background=""
+            android:enabled="false"
             android:textSize="20sp"/>
         <RadioGroup
             android:layout_weight="1"
+            android:id="@+id/lifestyleBtnGrp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/background_shape"
-            android:orientation="horizontal"
-            android:layout_marginLeft="10dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
             <RadioButton
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:text="Once"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                android:layout_marginLeft="45dp"
                 android:textSize="20sp"/>
             <RadioButton
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:text="Daily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moderate"
+                android:layout_marginLeft="45dp"
                 android:textSize="20sp"/>
             <RadioButton
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:text="Weekly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:text="Very Active"
                 android:textSize="20sp"/>
         </RadioGroup>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center">
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="HEIGHT:"
         android:textSize="20sp"/>
         <EditText
-            android:layout_width="50dp"
+            android:layout_width="100dp"
             android:layout_height="50dp"
-            android:background="@drawable/box_shape"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginLeft="10dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -95,25 +121,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center">
+        android:layout_marginLeft="50dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="WEIGHT:"
             android:textSize="20sp"/>
         <EditText
-            android:layout_width="50dp"
+            android:layout_width="100dp"
             android:layout_height="50dp"
-            android:background="@drawable/box_shape"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginLeft="10dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FT/CM"/>
+            android:text="KG/LBS"/>
     </LinearLayout>
-
-
-
 </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEXT"
+        android:layout_gravity="right"
+        android:id="@+id/btnNext"/>
+    </LinearLayout>
+</ScrollView>
