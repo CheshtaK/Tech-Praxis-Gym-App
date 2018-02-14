@@ -11,11 +11,13 @@
         android:id="@+id/imageAppBar"/>
 
     <LinearLayout
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/userMale"
@@ -33,6 +35,10 @@
 
     <Button
         android:id="@+id/btnNext"
+        android:background="@color/colorAccent"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"

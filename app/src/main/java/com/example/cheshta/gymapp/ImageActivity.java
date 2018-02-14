@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -47,6 +48,7 @@ public class ImageActivity extends AppCompatActivity {
     ProgressDialog mProgressDialog;
     Button btnNext;
 
+    Toolbar imageAppBar;
     private static final int GALLERY_PICK = 1;
 
     @Override
@@ -59,6 +61,10 @@ public class ImageActivity extends AppCompatActivity {
         btnNext = findViewById(R.id.btnNext);
 
         btnNext.setVisibility(View.GONE);
+
+        imageAppBar = findViewById(R.id.imageAppBar);
+        setSupportActionBar(imageAppBar);
+        getSupportActionBar().setTitle("Upload Image");
 
         mImageStorage = FirebaseStorage.getInstance().getReference();
 
@@ -77,7 +83,7 @@ public class ImageActivity extends AppCompatActivity {
 
                 if(!image.equals("default")){
                     Picasso.with(ImageActivity.this).load(image).networkPolicy(NetworkPolicy.OFFLINE)
-                            .placeholder(R.mipmap.user_male).into(userMale, new Callback() {
+                            .placeholder(R.drawable.male).into(userFemale, new Callback() {
                         @Override
                         public void onSuccess() {
 
@@ -85,7 +91,7 @@ public class ImageActivity extends AppCompatActivity {
 
                         @Override
                         public void onError() {
-                            Picasso.with(ImageActivity.this).load(image).placeholder(R.mipmap.user_male).into(userMale);
+                            Picasso.with(ImageActivity.this).load(image).placeholder(R.drawable.male).into(userFemale);
                         }
                     });
                 }
@@ -95,7 +101,7 @@ public class ImageActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });
+        }   );
 
         userMale.setClickable(true);
         userMale.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +112,26 @@ public class ImageActivity extends AppCompatActivity {
                 galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
 
                 startActivityForResult(Intent.createChooser(galleryIntent, "SELECT IMAGE"), GALLERY_PICK);
+            }
+        });
+
+        userFemale.setClickable(true);
+        userFemale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent galleryIntent = new Intent();
+                galleryIntent.setType("image/*");
+                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+
+                startActivityForResult(Intent.createChooser(galleryIntent, "SELECT IMAGE"), GALLERY_PICK);
+            }
+        });
+
+        btnNext.setVisibility(View.VISIBLE);
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ImageActivity.this, ProfileActivity.class));
             }
         });
     }

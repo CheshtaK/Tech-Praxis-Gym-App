@@ -5,22 +5,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@color/colorPrimaryDark"
     tools:context="com.example.cheshta.gymapp.HomeActivity">
 
     <TextView
-        android:text="Welcome"
+        android:text="Welcome to Fitness Freak"
         android:textSize="30sp"
+        android:textColor="#FFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btnLogin"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:background="@color/colorAccent"
+        android:textColor="#FFFF"
         android:text="Already have an account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btnRegister"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:background="@color/colorAccent"
+        android:textColor="#FFFF"
         android:text="Need a new account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

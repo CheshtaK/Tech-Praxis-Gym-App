@@ -6,22 +6,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@color/colorPrimaryDark"
     tools:context="com.example.cheshta.gymapp.StartActivity">
 
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher" />
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/fit" />
 
     <Button
         android:id="@+id/btnGetStarted"
         android:layout_marginTop="30sp"
         android:text="GET STARTED"
-        android:textSize="24sp"
-        android:textColor="#000"
+        android:background="@color/colorAccent"
+        android:textSize="17sp"
+        android:padding="15dp"
+        android:textColor="#FFFF"
         android:textStyle="bold"
-        android:layout_width="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
 </LinearLayout>
