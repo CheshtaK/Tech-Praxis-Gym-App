@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GymApp.iml" filepath="$PROJECT_DIR$/GymApp.iml" />
+      <module fileurl="file://C:\Users\KAPIL\AndroidStudioProjects\Tech-Praxis-Gym-App\GymApp.iml" filepath="C:\Users\KAPIL\AndroidStudioProjects\Tech-Praxis-Gym-App\GymApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tech-Praxis-Gym-App.iml" filepath="$PROJECT_DIR$/Tech-Praxis-Gym-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

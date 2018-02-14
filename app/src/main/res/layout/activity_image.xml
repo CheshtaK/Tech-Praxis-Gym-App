@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context="com.example.cheshta.gymapp.ImageActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MALE"
+        android:layout_above="@id/userMale"
+        android:textSize="25sp"
+        android:layout_marginLeft="40dp"
+        android:id="@+id/tvMale"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="185dp"
+        android:layout_height="180dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/user_male"
+        android:id="@+id/userMale"
+        />
+    <View
+        android:id="@+id/verticalSeperatorHours"
+        android:layout_width="1dip"
+        android:layout_centerVertical="true"
+        android:layout_height="200dp"
+        android:layout_toRightOf="@id/userMale"
+        android:background="@color/colorPrimary"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FEMALE"
+        android:textSize="25sp"
+        android:id="@+id/tvFemale"
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@id/userMale"
+        android:layout_above="@id/userFemale"
+        />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="185dp"
+        android:layout_height="180dp"
+        android:src="@mipmap/user_male"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/userMale"
+        android:id="@+id/userFemale"
+        />
+</RelativeLayout>
