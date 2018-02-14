@@ -37,8 +37,6 @@ import java.util.HashMap;
 public class RegisterActivity extends AppCompatActivity {
 
     private static final int RC_SIGN_IN = 101;
-    TextInputLayout tilDisplayName, tilEmail, tilPassword;
-    Button btnCreateAccount;
     Toolbar registerToolbar;
     ProgressDialog regProgress;
     SignInButton btnGoogle;
@@ -53,10 +51,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        tilDisplayName = findViewById(R.id.tilDisplayName);
-        tilEmail = findViewById(R.id.tilEmail);
-        tilPassword = findViewById(R.id.tilPassword);
-        btnCreateAccount = findViewById(R.id.btnCreateAccount);
         btnGoogle = findViewById(R.id.btnGoogle);
         
         registerToolbar = findViewById(R.id.registerToolbar);
@@ -70,31 +64,12 @@ public class RegisterActivity extends AppCompatActivity {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+
                 if(firebaseAuth.getCurrentUser() != null){
-                    Toast.makeText(RegisterActivity.this, "Google sign in done", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RegisterActivity.this, ImageActivity.class));
                 }
             }
         };
-
-        btnCreateAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String displayName = tilDisplayName.getEditText().getText().toString();
-                String email = tilEmail.getEditText().getText().toString();
-                String password = tilPassword.getEditText().getText().toString();
-
-                if(!displayName.isEmpty() && !email.isEmpty() && !password.isEmpty()){
-
-                    regProgress.setTitle("Registering User");
-                    regProgress.setMessage("Please wait while we create your account!");
-                    regProgress.setCanceledOnTouchOutside(false);
-                    regProgress.show();
-
-                    RegisterUser(displayName, email, password);
-                }
-            }
-        });
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -105,7 +80,6 @@ public class RegisterActivity extends AppCompatActivity {
                 .enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
                     @Override
                     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
                         Toast.makeText(RegisterActivity.this, "You got an error", Toast.LENGTH_SHORT).show();
                     }
                 })
@@ -160,41 +134,5 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     }
                 });
-    }
-
-    private void RegisterUser(final String displayName, String email, String password) {
-
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                if(task.isSuccessful()){
-
-                    FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-                    String id = currentUser.getUid();
-
-                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(id);
-
-                    HashMap<String, String> userMap = new HashMap<>();
-                    userMap.put("name", displayName);
-
-                    mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-
-                            if(task.isSuccessful()){
-                                regProgress.dismiss();
-                                Toast.makeText(RegisterActivity.this, "Successful", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                }
-
-                else {
-                    regProgress.hide();
-                    Toast.makeText(RegisterActivity.this, "Cannot create your account. Please check the form and try again", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
     }
 }

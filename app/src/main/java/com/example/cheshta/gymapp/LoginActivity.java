@@ -1,6 +1,7 @@
 package com.example.cheshta.gymapp;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -74,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(task.isSuccessful()){
                     loginProgress.dismiss();
-                    Toast.makeText(LoginActivity.this, "Successful", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 }
             }
         });
