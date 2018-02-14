@@ -1,15 +1,19 @@
 # Tech-Praxis-Gym-App
-## Screenshots
-![whatsapp image 2018-02-14 at 3 10 39 pm](https://user-images.githubusercontent.com/32400008/36198682-4130d2a0-119d-11e8-8901-64d12c9d8baf.jpeg)
-![whatsapp image 2018-02-14 at 3 10 40 pm 1](https://user-images.githubusercontent.com/32400008/36198683-4198da94-119d-11e8-8659-9de0b1630dcb.jpeg)
-![whatsapp image 2018-02-14 at 3 10 40 pm](https://user-images.githubusercontent.com/32400008/36198684-41d7e14e-119d-11e8-938a-287c6be93a60.jpeg)
-![whatsapp image 2018-02-14 at 3 10 41 pm](https://user-images.githubusercontent.com/32400008/36198686-421969c0-119d-11e8-8ef5-6b8aa15a1b55.jpeg)
-![whatsapp image 2018-02-14 at 3 10 42 pm 1](https://user-images.githubusercontent.com/32400008/36198689-425a8d56-119d-11e8-8983-8ddc8b99f433.jpeg)
-![whatsapp image 2018-02-14 at 3 10 42 pm](https://user-images.githubusercontent.com/32400008/36198691-4297ad44-119d-11e8-852d-1f31f1817b8d.jpeg)
-![whatsapp image 2018-02-14 at 3 29 18 pm](https://user-images.githubusercontent.com/32400008/36198692-42f155f6-119d-11e8-844c-ca5ae8f43c62.jpeg)
-![whatsapp image 2018-02-14 at 3 29 19 pm](https://user-images.githubusercontent.com/32400008/36198693-433dbdf6-119d-11e8-966b-100dc1550143.jpeg)
-![whatsapp image 2018-02-14 at 4 07 37 pm](https://user-images.githubusercontent.com/32400008/36199976-3bd92664-11a1-11e8-99ae-aaf227d04504.jpeg)
-![whatsapp image 2018-02-14 at 4 06 11 pm](https://user-images.githubusercontent.com/32400008/36199953-264a17a4-11a1-11e8-99d7-7212375b8493.jpeg)
-![whatsapp image 2018-02-14 at 4 06 30 pm](https://user-images.githubusercontent.com/32400008/36199954-26909ddc-11a1-11e8-8dbc-fa7b9cdd3e1f.jpeg)
 
-![whatsapp image 2018-02-14 at 4 15 29 pm](https://user-images.githubusercontent.com/32400008/36200392-831796d6-11a2-11e8-8b5a-b1f5f800b8d2.jpeg)
+### Problem Statement
+##### A gym wants to have a mobile application for personalised training.Develop an Android/iOS application.
+
+### Solution
+##### A gym app with multi window login form that fetches user information and stores it in Firebase Database. The user has the option to upload his/her image which is then stored in Firebase Storage. User can sign up either with email and password or using his Google account.
+
+#### To Implement: Sign up using Facebook
+![1](https://user-images.githubusercontent.com/32400008/36221175-3f9abb0e-11e3-11e8-8e5e-8bcb4929595a.jpeg) 
+![3](https://user-images.githubusercontent.com/32400008/36221227-6d5cbdc6-11e3-11e8-83fe-3ca15cd81954.jpeg)
+![4](https://user-images.githubusercontent.com/32400008/36221245-7b2ced68-11e3-11e8-8657-a711966a3f23.jpeg)
+![5](https://user-images.githubusercontent.com/32400008/36221267-8e4c1504-11e3-11e8-8774-0104dfe9cb6f.jpeg)
+![6](https://user-images.githubusercontent.com/32400008/36221275-97bdda1e-11e3-11e8-822d-80cf6fb3d17f.jpeg)
+![7](https://user-images.githubusercontent.com/32400008/36221288-a4bc309e-11e3-11e8-9bfc-fd569cc6de0d.jpeg)
+![8](https://user-images.githubusercontent.com/32400008/36221306-b4fcb3ca-11e3-11e8-932d-14c2d4bbffdd.jpeg)
+![9](https://user-images.githubusercontent.com/32400008/36221334-c71c8076-11e3-11e8-8c3e-a25ea139abf8.jpeg)
+![10](https://user-images.githubusercontent.com/32400008/36221350-d52c4926-11e3-11e8-95d9-0087a443c94b.jpeg)
+![11](https://user-images.githubusercontent.com/32400008/36221414-0713572c-11e4-11e8-83f4-3cdfb2355c5a.jpeg)
