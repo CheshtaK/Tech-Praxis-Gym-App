@@ -80,4 +80,14 @@
         android:layout_gravity="right"
         android:text="Create Account" />
 
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btnGoogle"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </com.google.android.gms.common.SignInButton>
+
 </LinearLayout>
